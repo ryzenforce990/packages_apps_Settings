@@ -33,6 +33,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
+import android.os.UserHandle;
 
 import androidx.annotation.VisibleForTesting;
 import androidx.fragment.app.Fragment;
@@ -67,6 +68,8 @@ public class TopLevelSettings extends DashboardFragment implements SplitLayoutLi
     private static final String SAVED_HIGHLIGHT_MIXIN = "highlight_mixin";
     private static final String PREF_KEY_SUPPORT = "top_level_support";
 
+    private int mDashBoardStyle;
+
     private boolean mIsEmbeddingActivityEnabled;
     private TopLevelHighlightMixin mHighlightMixin;
     private int mPaddingHorizontal;
@@ -90,7 +93,14 @@ public class TopLevelSettings extends DashboardFragment implements SplitLayoutLi
 
     @Override
     protected int getPreferenceScreenResId() {
-        return R.xml.top_level_settings;
+        switch (mDashBoardStyle) {
+           case 0:
+               return R.xml.top_level_settings;
+           case 1:
+               return R.xml.top_level_settings_horizon;
+           default:
+               return R.xml.top_level_settings;
+        }
     }
 
     @Override
@@ -108,6 +118,7 @@ public class TopLevelSettings extends DashboardFragment implements SplitLayoutLi
         super.onAttach(context);
         HighlightableMenu.fromXml(context, getPreferenceScreenResId());
         use(SupportPreferenceController.class).setActivity(getActivity());
+        setDashboardStyle(context);
     }
 
     @Override
@@ -232,12 +243,13 @@ public class TopLevelSettings extends DashboardFragment implements SplitLayoutLi
 
  	    String key = preference.getKey();
 
-	        if (key.equals("top_level_about_device")){
+            if (mDashBoardStyle == 1) {
+            if (key.equals("top_level_about_device")){
 	        preference.setLayoutResource(R.layout.hzn_homepage_card_top);
-	        }
+	    }
             if (key.equals("top_level_horizonlab")){
 	        preference.setLayoutResource(R.layout.hzn_homepage_card_bot);
-	        }
+	    }
             if (key.equals("top_level_network")){
                 preference.setLayoutResource(R.layout.hzn_homepage_card_top);
             }
@@ -264,11 +276,11 @@ public class TopLevelSettings extends DashboardFragment implements SplitLayoutLi
             }
             if (key.equals("top_level_storage")){
                 preference.setLayoutResource(R.layout.hzn_homepage_card_storage);
-			}
+            }
             if (key.equals("top_level_accessibility")){
                 preference.setLayoutResource(R.layout.hzn_homepage_card_top);
             }
-			if (key.equals("top_level_safety_center")){
+            if (key.equals("top_level_safety_center")){
                 preference.setLayoutResource(R.layout.hzn_homepage_card_mid);
             }
             if (key.equals("top_level_security")){
@@ -276,7 +288,7 @@ public class TopLevelSettings extends DashboardFragment implements SplitLayoutLi
             }
             if (key.equals("top_level_privacy")){
                 preference.setLayoutResource(R.layout.hzn_homepage_card_mid);
-			}
+            }
             if (key.equals("top_level_location")){
                 preference.setLayoutResource(R.layout.hzn_homepage_card_bot);
             }
@@ -305,6 +317,7 @@ public class TopLevelSettings extends DashboardFragment implements SplitLayoutLi
                 preference.setLayoutResource(R.layout.hzn_homepage_card_mid);
             }
 	    }
+            }
     }
 
     @Override
@@ -474,4 +487,8 @@ public class TopLevelSettings extends DashboardFragment implements SplitLayoutLi
                     return false;
                 }
             };
+            private void setDashboardStyle(Context context) {
+                    mDashBoardStyle = Settings.System.getIntForUser(context.getContentResolver(),
+                    Settings.System.SETTINGS_DASHBOARD_STYLE, 0, UserHandle.USER_CURRENT);
+    }
 }
