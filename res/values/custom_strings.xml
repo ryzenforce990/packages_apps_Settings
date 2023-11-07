@@ -277,4 +277,14 @@
     <string name="doze_gesture_ambient_summary">Show Ambient Display instead of fully waking the screen up</string>
     <string name="gesture_wake_ambient">Show Ambient</string>
     <string name="gesture_wake">Fully wake</string>
+
+    <!-- About phone screen,  setting option name  [CHAR LIMIT=40] -->
+    <string name="selinux_status">SELinux status</string>
+
+    <!-- These statuses are displayed when a device was built with SE Android supoprt.
+    These are displayed by the settings app in the about section. -->
+    <string name="selinux_status_disabled">Disabled</string>
+    <string name="selinux_status_permissive">Permissive</string>
+    <string name="selinux_status_enforcing">Enforcing</string>
+
 </resources>
