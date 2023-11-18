@@ -194,9 +194,10 @@ import com.android.settings.wifi.details.WifiNetworkDetailsFragment;
 import com.android.settings.wifi.p2p.WifiP2pSettings;
 import com.android.settings.wifi.savedaccesspoints2.SavedAccessPointsWifiSettings2;
 import com.android.settings.wifi.tether.WifiTetherSettings;
-
 import com.android.settings.livedisplay.LiveDisplaySettings;
 import ink.kscope.settings.wifi.tether.WifiTetherClientManager;
+import com.horizon.lab.HorizonDashboard;
+
 
 public class SettingsGateway {
 
@@ -383,6 +384,8 @@ public class SettingsGateway {
             UserAspectRatioDetails.class.getName(),
             LiveDisplaySettings.class.getName(),
             WifiTetherClientManager.class.getName()
+            HorizonDashboard.class.getName()
+
     };
 
     public static final String[] SETTINGS_FOR_RESTRICTED = {
@@ -429,5 +432,6 @@ public class SettingsGateway {
             UserBackupSettingsActivity.class.getName(),
             Settings.MemtagPageActivity.class.getName(),
             Settings.NavigationModeSettingsActivity.class.getName(),
+            Settings.HorizonlabSettingsActivity.class.getName(),
     };
 }

@@ -517,6 +517,10 @@ public class Settings extends SettingsActivity {
      */
     public static class OneHandedSettingsActivity extends SettingsActivity { /* empty */ }
 
+
     // LiveDisplay
     public static class LiveDisplaySettingsActivity extends SettingsActivity { /* empty */ }
+
+    // HorizonLabs.
+    public static class HorizonlabSettingsActivity extends SettingsActivity {}
 }

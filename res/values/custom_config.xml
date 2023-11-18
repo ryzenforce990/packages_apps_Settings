@@ -38,4 +38,8 @@
 
     <!-- Whether to show min refresh rate in display settings -->
     <bool name="config_show_min_refresh_rate_switch">false</bool>
+
+    <color name="homepage_horizonlab_background">#536dfe</color>
+
+
 </resources>
