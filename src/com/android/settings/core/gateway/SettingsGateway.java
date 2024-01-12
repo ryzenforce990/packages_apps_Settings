@@ -194,6 +194,12 @@ import com.android.settings.wifi.details.WifiNetworkDetailsFragment;
 import com.android.settings.wifi.p2p.WifiP2pSettings;
 import com.android.settings.wifi.savedaccesspoints2.SavedAccessPointsWifiSettings2;
 import com.android.settings.wifi.tether.WifiTetherSettings;
+
+
+import com.horizon.lab.category.AboutTeamFragment;
+import com.horizon.lab.category.QuickSettings;
+import com.horizon.lab.category.Statusbar;
+
 import com.android.settings.livedisplay.LiveDisplaySettings;
 import ink.kscope.settings.wifi.tether.WifiTetherClientManager;
 import com.horizon.lab.HorizonDashboard;
@@ -383,9 +389,11 @@ public class SettingsGateway {
             BatteryInfoFragment.class.getName(),
             UserAspectRatioDetails.class.getName(),
             LiveDisplaySettings.class.getName(),
-            WifiTetherClientManager.class.getName()
-            HorizonDashboard.class.getName()
-
+            WifiTetherClientManager.class.getName(),
+            AboutTeamFragment.class.getName(),
+            QuickSettings.class.getName(),
+            Statusbar.class.getName(),
+            HorizonDashboard.class.getName(),
     };
 
     public static final String[] SETTINGS_FOR_RESTRICTED = {
@@ -433,5 +441,10 @@ public class SettingsGateway {
             Settings.MemtagPageActivity.class.getName(),
             Settings.NavigationModeSettingsActivity.class.getName(),
             Settings.HorizonlabSettingsActivity.class.getName(),
+
+            // Labs 
+            Settings.AboutTeamActivity.class.getName(),
+            Settings.QuickSettingsActivity.class.getName(),
+            Settings.StatusbarActivity.class.getName(),
     };
 }

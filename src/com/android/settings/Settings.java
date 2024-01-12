@@ -96,6 +96,11 @@ public class Settings extends SettingsActivity {
         return modIntent;
     }
 
+    /** Activity for Labs settings. */
+    public static class AboutTeamActivity extends SettingsActivity { /* empty */ }
+    public static class QuickSettingsActivity extends SettingsActivity { /* empty */ }
+    public static class StatusbarActivity extends SettingsActivity { /* empty */ }
+
     public static class VpnSettingsActivity extends SettingsActivity { /* empty */ }
     /** Activity for Data saver settings. */
     public static class DataSaverSummaryActivity extends SettingsActivity { /* empty */ }

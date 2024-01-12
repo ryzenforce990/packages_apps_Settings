@@ -62,7 +62,6 @@ android_library {
         "res-product",
         "TouchGestures/res",
         "HorizonLab/res",
-
     ],
 
     aaptflags: ["--extra-packages com.horizon.lab",
