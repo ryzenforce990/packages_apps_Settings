@@ -220,10 +220,6 @@
     <string name="doze_double_tap_title">Double tap to check phone</string>
     <string name="doze_double_tap_summary">Pulse notifications by a double tap</string>
 
-    <!-- Power menu on secure lockscreen -->
-    <string name="lockscreen_enable_power_menu_title">Power menu</string>
-    <string name="lockscreen_enable_power_menu_summary">Allow accessing power menu on secure lockscreen</string>
-
     <!-- Hotspot -->
     <string name="wifi_hotspot_hidden_ssid_title">Hidden network</string>
     <string name="wifi_hotspot_hidden_ssid_summary">Your mobile hotspot\'s name won\'t appear in the list of available WLAN networks.</string>
