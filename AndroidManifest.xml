@@ -5040,7 +5040,7 @@
                   android:label="@string/category_statusbar_title"
                   android:exported="true">
             <intent-filter android:priority="1">
-                <action android:name="com.horizon.lab.category.StatusBar" />
+                <action android:name="com.horizon.lab.category.Statusbar" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <intent-filter android:priority="71">
@@ -5048,7 +5048,7 @@
                 <category android:name="com.android.settings.SHORTCUT" />
             </intent-filter>
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-                       android:value="com.horizon.lab.category.StatusBar" />
+                       android:value="com.horizon.lab.category.Statusbar" />
             <meta-data android:name="com.android.settings.HIGHLIGHT_MENU_KEY"
                        android:value="@string/menu_key_about_device"/>
             <meta-data android:name="com.android.settings.PRIMARY_PROFILE_CONTROLLED"
